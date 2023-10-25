@@ -1,0 +1,259 @@
+openapi: 3.0.2
+info:
+  title: Chat GPT Function Calls API
+  version: 1.0.0
+  description: An API for utilizing various function calls with Chat GPT
+  contact:
+    name: Your Name
+    email: your.email@example.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://example.com/terms/
+paths:
+  /text-classification:
+    post:
+      summary: Perform text classification using Chat GPT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+              required:
+                - text
+      responses:
+        '200':
+          description: Text classification results
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  classification:
+                    type: string
+  /named-entity-recognition:
+    post:
+      summary: Perform named entity recognition using Chat GPT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+              required:
+                - text
+      responses:
+        '200':
+          description: Named entity recognition results
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  entities:
+                    type: array
+                    items:
+                      type: string
+  /intent-recognition:
+    post:
+      summary: Perform intent recognition using Chat GPT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+              required:
+                - text
+      responses:
+        '200':
+          description: Intent recognition results
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  intent:
+                    type: string
+  /text-clustering:
+    post:
+      summary: Perform text clustering using Chat GPT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                texts:
+                  type: array
+                  items:
+                    type: string
+              required:
+                - texts
+      responses:
+        '200':
+          description: Text clustering results
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  clusters:
+                    type: array
+                    items:
+                      type: array
+                      items:
+                        type: string
+  /text-generation:
+    post:
+      summary: Generate text for chatbots using Chat GPT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                prompt:
+                  type: string
+              required:
+                - prompt
+      responses:
+        '200':
+          description: Generated text for chatbots
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  text:
+                    type: string
+  /language-detection:
+    post:
+      summary: Detect language using Chat GPT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+              required:
+                - text
+      responses:
+        '200':
+          description: Detected language
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  language:
+                    type: string
+  /text-recommendation:
+    post:
+      summary: Make text recommendations using Chat GPT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+              required:
+                - text
+      responses:
+        '200':
+          description: Text recommendations
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  recommendations:
+                    type: array
+                    items:
+                      type: string
+  /question-answering:
+    post:
+      summary: Answer questions using Chat GPT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                question:
+                  type: string
+                context:
+                  type: string
+              required:
+                - question
+                - context
+      responses:
+        '200':
+          description: Question answering results
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  answer:
+                    type: string
+  /text-completion:
+    post:
+      summary: Complete text using Chat GPT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+              required:
+                - text
+      responses:
+        '200':
+          description: Completed text
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  completed_text:
+                    type: string
+  /text-similarity:
+    post:
+      summary: Calculate similarity between texts using Chat GPT
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text1:
+                  type: string
+                text2:
+                  type: string
+              required:
+                - text1
+                - text2
+      responses:
+        '200':
+          description: Text similarity score
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  similarity_score:
+                    type: number
