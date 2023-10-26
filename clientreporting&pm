@@ -1,0 +1,48 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Chat GPT Function Calls API
+  description: ' An API for utilizing various function calls with Chat GPT'
+  contact:
+    name: Michael Tate
+    email: mikertate007@gmail.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://example.com/terms/
+paths:
+/client-reporting:
+  post:
+    summary: Generate client report
+    operationId: clientReporting
+    security:
+      - api_key: []
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/TextGenerationInput'
+    responses:
+      '200':
+        description: Report generated
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                report:
+                  type: object
+                  properties:
+                    clientName:
+                      type: string
+                    projectName:
+                      type: string
+                    reportDate:
+                      type: string
+                    reportText:
+                      type: string
+
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/MTATE/ChatGPT/1.0.0
