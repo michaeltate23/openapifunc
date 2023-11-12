@@ -4,10 +4,10 @@ info:
   description: Pinecone is a vector database. This is an unofficial, community-managed OpenAPI spec that (should) accurately model the Pinecone API. This project was developed independent of and is unaffiliated with Pinecone Systems. Users should switch to the official API spec, if and when Pinecone releases it.
   contact:
     name: Michael Tate
-    url: https://raw.githubusercontent.com/michaeltate23/openapifunc/main/pinecone.yaml
+    url: https://gen-qa-openai-fast-0xcz0qf.svc.gcp-starter.pinecone.io
   version: "1.0.0"
 servers:
-  - url: https://raw.githubusercontent.com/michaeltate23/openapifunc/main/pinecone.yaml
+  - url: https://gen-qa-openai-fast-0xcz0qf.svc.gcp-starter.pinecone.io
     variables:
       environment:
         default: us-east1-gcp
@@ -79,4 +79,4 @@ tags:
 servers:
   # Added by API Auto Mocking Plugin
   - description: GIT Hosted
-    url: https://raw.githubusercontent.com/michaeltate23/openapifunc/main/pinecone.yaml
+    url: https://gen-qa-openai-fast-0xcz0qf.svc.gcp-starter.pinecone.io
