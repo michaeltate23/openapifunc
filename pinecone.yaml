@@ -7,7 +7,7 @@ info:
     url: https://raw.githubusercontent.com/michaeltate23/openapifunc/main/pinecone.yaml
   version: "1.0.0"
 servers:
-  - url: https://github.com/michaeltate23/openapifunc/blob/main/pinecone.yaml
+  - url: https://raw.githubusercontent.com/michaeltate23/openapifunc/main/pinecone.yaml
     variables:
       environment:
         default: us-east1-gcp
@@ -79,4 +79,4 @@ tags:
 servers:
   # Added by API Auto Mocking Plugin
   - description: GIT Hosted
-    url: https://github.com/michaeltate23/openapifunc/blob/main/pinecone.yaml
+    url: https://raw.githubusercontent.com/michaeltate23/openapifunc/main/pinecone.yaml
