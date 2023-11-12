@@ -7,7 +7,7 @@ info:
     url: https://raw.githubusercontent.com/michaeltate23/openapifunc/main/pinecone.yaml
   version: "1.0.0"
 servers:
-  - url: https://controller.{environment}.pinecone.io  
+  - url: https://github.com/michaeltate23/openapifunc/blob/main/pinecone.yaml
     variables:
       environment:
         default: us-east1-gcp
@@ -78,5 +78,5 @@ tags:
                     description: Confirmation message.
 servers:
   # Added by API Auto Mocking Plugin
-  - description: SwaggerHub API Auto Mocking
-    url: https://virtserver.swaggerhub.com/MTATE/ChatGPT/1.0.0
+  - description: GIT Hosted
+    url: https://github.com/michaeltate23/openapifunc/blob/main/pinecone.yaml
