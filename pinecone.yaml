@@ -3,9 +3,9 @@ info:
   title: Pinecone API
   description: Pinecone is a vector database. This is an unofficial, community-managed OpenAPI spec that (should) accurately model the Pinecone API. This project was developed independent of and is unaffiliated with Pinecone Systems. Users should switch to the official API spec, if and when Pinecone releases it.
   contact:
-    name: Andy Boothe
-    url: https://github.com/sigpwned/pinecone-openapi-spec
-  version: "20230406.1"
+    name: Michael Tate
+    url: https://raw.githubusercontent.com/michaeltate23/openapifunc/main/pinecone.yaml
+  version: "1.0.0"
 servers:
   - url: https://controller.{environment}.pinecone.io  
     variables:
@@ -13,13 +13,7 @@ servers:
         default: us-east1-gcp
         description: The regional deployment to use. Must match API key.
         enum:
-          - us-west1-gcp
-          - us-west4-gcp
-          - us-central1-gcp
-          - us-east1-gcp
-          - us-east4-gcp
-          - eu-west1-gcp
-          - us-east1-aws
+          - gcp-starter
 externalDocs:
   url: https://docs.pinecone.io/
   description: The official Pinecone API documentation
@@ -82,3 +76,7 @@ tags:
                   message:
                     type: string
                     description: Confirmation message.
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/MTATE/ChatGPT/1.0.0
