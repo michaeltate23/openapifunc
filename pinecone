@@ -1,0 +1,84 @@
+openapi: 3.0.2
+info:
+  title: Pinecone API
+  description: Pinecone is a vector database. This is an unofficial, community-managed OpenAPI spec that (should) accurately model the Pinecone API. This project was developed independent of and is unaffiliated with Pinecone Systems. Users should switch to the official API spec, if and when Pinecone releases it.
+  contact:
+    name: Andy Boothe
+    url: https://github.com/sigpwned/pinecone-openapi-spec
+  version: "20230406.1"
+servers:
+  - url: https://controller.{environment}.pinecone.io  
+    variables:
+      environment:
+        default: us-east1-gcp
+        description: The regional deployment to use. Must match API key.
+        enum:
+          - us-west1-gcp
+          - us-west4-gcp
+          - us-central1-gcp
+          - us-east1-gcp
+          - us-east4-gcp
+          - eu-west1-gcp
+          - us-east1-aws
+externalDocs:
+  url: https://docs.pinecone.io/
+  description: The official Pinecone API documentation
+tags:
+  - name: Index Operations
+    description: Endpoints for manipulating indexes
+  - name: Vector Operations
+    description: Endpoints for manipulating vectors
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+                  description: Text to generate embedding from.
+              required:
+                - text
+      responses:
+        '200':
+          description: Embedding created and added successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  embedding_id:
+                    type: string
+                    description: The ID of the created embedding.
+                  message:
+                    type: string
+                    description: Confirmation message.
+
+  /load-embedding:
+    get:
+      summary: Load Embedding
+      description: Retrieves an embedding from the Pinecone index.
+      parameters:
+        - in: query
+          name: embedding_id
+          required: true
+          schema:
+            type: string
+          description: The ID of the embedding to retrieve.
+      responses:
+        '200':
+          description: Embedding retrieved successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  embedding:
+                    type: array
+                    items:
+                      type: number
+                    description: The retrieved embedding.
+                  message:
+                    type: string
+                    description: Confirmation message.
